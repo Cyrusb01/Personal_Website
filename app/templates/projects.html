@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<title>Cyrus Buhariwalla</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
+	<!-- jQuery library -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/static/styles.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<!-- <link rel="stylesheet" href="./style.css"> -->
+		<div class="row mt-3">
+			<div class="col-md-11 offset-md-1">
+				<span class="logo__text logo"> ></span>
+				<span class="logo__text logo">$ cd /cyrus/projects</span>
+				<span class="logo__cursor"></span>
+				<span class="header__right">
+					<nav class="menu">
+						<ul class="menu__inner">
+                            <a href="{{ url_for('home') }}">/..</a>
+							<!-- <a href="{{ url_for('projects') }}">/projects</a> -->
+							<a href="{{ url_for('portfolio') }}">/portfolio</a>
+							<a href="{{ url_for('trading') }}">/trading</a>
+
+						</ul>
+					</nav>
+				</span>
+				<a href="https://www.linkedin.com/in/cyrus-buhariwalla-2012461a8/" target="_blank" style="text-decoration: none;"
+					rel="noopener noreferrer">
+					<img class="mt-1" veritcal-align="top" src="/static/linkedin.svg" height="40px">
+				</a>
+				<a href="https://github.com/Cyrusb01" target="_blank" rel="noopener noreferrer">
+					<img class="mt-1" veritcal-align="top" src="/static/github.svg" height="40px">
+				</a>
+			</div>
+
+		</div>
+		<div class="row mt-3 pt-lg-5">
+			<div class="col-md-11 offset-1">
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-md-11 offset-1 mb-5">
+				<p class = "header">
+					Projects
+				</p>
+				<h1 style="display: inline-block;">
+					Crypto World
+				</h1>
+				<h1 class="date">
+					- November 2021
+				</h1>
+				<a style="display: flex;">
+					Crypto World is a website designed to educate users on the utility and performance of different cryptocurrencies. This was a project 
+					done for my programming studio class and I was responsible for completing the backend. The web app is built using Flask, and uses 
+					python news api, cryptocompare, yfinance, and a backtesting library by the name of bt. The data visualization was also done by me using 
+					javascript, specifically highcharts, highstock, and plotly. 
+				</a>
+				<p>
+					<a class="btn btn-custom-1 mt-2" style = "width: 100%; text-align: left;" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapseExample">
+					  <!-- See More &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +  -->
+						See More &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; + 
+					</a>
+				</p>
+				<div class="collapse" id="collapse1">
+					<div class = "row">
+						<div class = "col-3">
+							<h4>
+								Tech Stack
+							</h4>
+							<dl style="margin: 0px;">
+								<dt>Python</dt>
+								<dd>&emsp;&emsp;Flask</dd>
+								<dd>&emsp;&emsp;News Api </dd>
+								<dd>&emsp;&emsp;yfinance</dd>
+								<dd>&emsp;&emsp;CryptoCompare</dd>
+								<dd>&emsp;&emsp;Quanstats</dd>
+								<dt>HTML</dt>
+								<dd>&emsp;&emsp;Boostrap 5</dd>
+								<dt>CSS</dt>
+								<dt>JS</dt>
+								<dd>&emsp;&emsp;Highcharts</dd>
+								<dd>&emsp;&emsp;Plotly</dd>
+							  </dl>
+						</div>
+
+					</div>
+				</div>
+				<a>
+					-------------------------------------------------------------------------------------------------------------------
+				</a>
+				<h1 class = "mt-5" style="display: inline-block;">
+					Portfolio Tools Platform
+				</h1>
+				<h1 class="date">
+					- Summer 2021
+				</h1>
+				<a style="display: flex;">
+					The portfolio tools platform is a collection of research tools designed to educate and arm financial advisors regarding crypto. 
+					This was my first full-stack project and involved designing, building, and deploying the app by myself. This was done for the fintech 
+					startup Onramp Invest, and is still being used as a part of their Onramp Academy. The tools allowed for easy research regarding
+					corellation, volatilty, and performance of cryptocurrencies, and involes eight distinct tools. My favorite page is the "Custom Strategy Dashboard", 
+					in which financial advisors can pick any stocks and cryptos, along with rebalancing periods and thresholds, and be given a full breakdown on 
+					the past perfomance and statistics of the created portfolio. 
+				</a>
+				<p>
+					<a class="btn btn-custom-1 mt-2" style = "width: 100%; text-align: left;" data-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapseExample">
+					  <!-- See More &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +  -->
+						See More &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; + 
+					</a>
+				</p>
+				<div class="collapse" id="collapse2">
+					<div class = "row">
+						<div class = "col-3">
+							<h4>
+								Tech Stack
+							</h4>
+							<dl style="margin: 0px;">
+								<dt>Python</dt>
+								<dd>&emsp;&emsp;Plotly Dash</dd>
+								<dd>&emsp;&emsp;Pandas</dd>
+								<dd>&emsp;&emsp;bt (backtesting)</dd>
+								<dd>&emsp;&emsp;CoinCap API</dd>
+								<dd>&emsp;&emsp;Facebook Prophet (ML)</dd>
+								<dt>CSS</dt>
+								<dt>SQL</dt>
+								<dd>&emsp;&emsp;Postgres</dd>
+								<dd>&emsp;&emsp;Alembic</dd>
+							  </dl>
+						</div>
+
+					</div>
+				</div>
+				<a>
+					-------------------------------------------------------------------------------------------------------------------
+				</a>
+				<h1 class = "mt-5" style="display: inline-block;">
+					Arbitrage Matrix
+				</h1>
+				<h1 class="date">
+					- March 2021
+				</h1>
+				<a style="display: flex;">
+					This arbitrage matrix was a small project I completed to learn and use asynchronous websockets, while also monitoring arbitrage in
+					the crypto markets. This is a script that asynchronously subscribes to five exchanges and compares the bitcoin prices from them all in 
+					real time. Although bitcoin arbitrage is no longer a very profitable strategy, this is a great building block for other arbitrage work. 
+				</a>
+				<p>
+					<a class="btn btn-custom-1 mt-2" style = "width: 100%; text-align: left;" data-toggle="collapse" href="#collapse3" role="button" aria-expanded="false" aria-controls="collapseExample">
+					  <!-- See More &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +  -->
+						See More &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; + 
+					</a>
+				</p> 
+				<div class="collapse" id="collapse3">
+					<div class = "row">
+						<div class = "col-2">
+							<h4>
+								Tech Stack
+							</h4>
+							<dl style="margin: 0px;">
+								<dt>Python</dt>
+								<dd>&emsp;&emsp;asyncio</dd>
+								<dt>websockets</dt>
+								<dd>&emsp;&emsp;Coinbase</dd>
+								<dd>&emsp;&emsp;Gemini</dd>
+								<dd>&emsp;&emsp;Kraken</dd>
+								<dd>&emsp;&emsp;Binance</dd>
+								<dd>&emsp;&emsp;FTX</dd>
+							  </dl>
+						</div>
+
+					</div>
+				</div>
+
+				<a>
+					-------------------------------------------------------------------------------------------------------------------
+				</a>
+				<h1 class = "mt-5" style="display: inline-block;">
+					Elon Money Bot
+				</h1>
+				<h1 class="date">
+					- March 2020
+				</h1>
+				<a style="display: flex;">
+					Elon Money Bot is a hackathon project in which my group scraped Elon Musk's tweets in order to take advantage of his 
+					market manipulation. After scraping the latest tweet, the bot would conduct some sentiment analysis to look for any potential 
+					stocks or cryptos mentioned, along with rating it positive or negative. When a tweet comes along with a ticker and positive sentiment 
+					the bot automatically invests using the alpaca api. 
+				</a>
+
+				<p>
+					<a class="btn btn-custom-1 mt-2" style = "width: 100%; text-align: left;" data-toggle="collapse" href="#collapse4" role="button" aria-expanded="false" aria-controls="collapseExample">
+					  <!-- See More &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +  -->
+						See More &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; + 
+					</a>
+				</p> 
+				<div class="collapse" id="collapse4">
+					<div class = "row">
+						<div class = "col-2">
+							<h4>
+								Tech Stack
+							</h4>
+							<dl style="margin: 0px;">
+								<dt>Python</dt>
+								<dd>&emsp;&emsp;twint</dd>
+								<dd>&emsp;&emsp;textblob</dd>
+								<dd>&emsp;&emsp;selenium</dd>
+								<dd>&emsp;&emsp;alpaca</dd>
+							  </dl>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	</div>
+
+
+	<!-- Optional JavaScript; choose one of the two! -->
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+
+	<!-- Option 2: Separate Popper and Bootstrap JS -->
+	<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
