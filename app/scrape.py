@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import yfinance as yf
 from app import cache
+import os 
 
 ########################################################## Ether ###############################################################
 @cache.memoize(86400)
@@ -43,11 +44,19 @@ def get_eth_assets(date):
 def get_sol_assets(date):
     print("Getting SOL Assets")
     url = 'https://solscan.io/account/9zQQvGgDNF57Givi2AVLpaydWNPYgmQhDkxZsxnc3hNj'
-
-    options = webdriver.ChromeOptions()
-    options.add_argument('headless')
-    driver = webdriver.Chrome(options=options)
-    # driver = webdriver.Chrome()
+    mode = "windows"
+    if mode == "heroku":
+        options = webdriver.ChromeOptions()
+        options.add_argument('headless')
+        driver = webdriver.Chrome(options=options)
+    else:
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--no-sandbox")
+        driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+    
     driver.get(url)
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, 
     '/html/body/div[1]/section/main/div/div[2]/div/div[1]/div/div[2]/div[3]')))
