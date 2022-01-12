@@ -13,7 +13,7 @@ def home():
 def projects():
     return render_template("projects.html")
 
-@app.route('/portfolio')
+@app.route('/portfolio', methods=['GET', 'POST'])
 def portfolio():
     #Connect to the sheet and pull all the data in once a day
     today = datetime.now().strftime('%Y/%m/%d')
