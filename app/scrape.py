@@ -15,12 +15,13 @@ def get_eth_assets(date):
     url = 'https://etherscan.io/address/0x6B6372D6d785752688461cB41b08D155914f42D7'
 
     req = Request(url, headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'})   # I got this line from another post since "uClient = uReq(URL)" and "page_html = uClient.read()" would not work (I beleive that etherscan is attemption to block webscraping or something?)
-    for i in range(5):
-        try:
-            response = urlopen(req, timeout=20).read()
-            response_close = urlopen(req, timeout=20).close()
-        except:
-            continue
+    # for i in range(5):
+    #     try:
+    #         response = urlopen(req, timeout=20).read()
+    #         response_close = urlopen(req, timeout=20).close()
+    #     except:
+    #         continue
+    response = urlopen(req).read()
     page_soup = soup(response, "html.parser")
     # print(page_soup)
     alloc_table = page_soup.find("div", {"class": "card-body"})
@@ -48,8 +49,8 @@ def get_eth_assets(date):
 def get_sol_assets(date):
     print("Getting SOL Assets")
     url = 'https://solscan.io/account/9zQQvGgDNF57Givi2AVLpaydWNPYgmQhDkxZsxnc3hNj'
-    mode = "windows"
-    if mode == "heroku":
+    mode = "heroku"
+    if mode == "windows":
         options = webdriver.ChromeOptions()
         options.add_argument('headless')
         driver = webdriver.Chrome(options=options)
