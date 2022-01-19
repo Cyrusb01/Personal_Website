@@ -1,4 +1,5 @@
 from urllib.request import Request, urlopen
+import requests
 from bs4 import BeautifulSoup as soup
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,18 +11,18 @@ import os
 
 ########################################################## Ether ###############################################################
 @cache.memoize(86400)
-def get_eth_assets(date):
+def get_eth_assets_old(date):
     print("Getting ETH Assets")
     url = 'https://etherscan.io/address/0x6B6372D6d785752688461cB41b08D155914f42D7'
 
     req = Request(url, headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'})   # I got this line from another post since "uClient = uReq(URL)" and "page_html = uClient.read()" would not work (I beleive that etherscan is attemption to block webscraping or something?)
-    # for i in range(5):
-    #     try:
-    #         response = urlopen(req, timeout=20).read()
-    #         response_close = urlopen(req, timeout=20).close()
-    #     except:
-    #         continue
-    response = urlopen(req).read()
+    for i in range(5):
+        try:
+            response = urlopen(req, timeout=20).read()
+            response_close = urlopen(req, timeout=20).close()
+        except:
+            continue
+    # response = urlopen(req).read()
     page_soup = soup(response, "html.parser")
     # print(page_soup)
     alloc_table = page_soup.find("div", {"class": "card-body"})
@@ -44,6 +45,22 @@ def get_eth_assets(date):
     print("Done")
     return eth_assets
 
+@cache.memoize(86400)
+def get_eth_assets(date):
+    print("Getting ETH Assets")
+    ETHERSCAN_API = os.getenv("ETHERSCAN_API")
+    address = "0x6B6372D6d785752688461cB41b08D155914f42D7"
+    ether_call = f"https://api.etherscan.io/api?module=account&action=balance&address={address}&tag=latest&apikey={ETHERSCAN_API}"
+    response = requests.get(ether_call)
+    response_dict = response.json()
+
+    df = yf.download("ETH-USD")
+    latest_eth = df["Close"][-1]
+    eth_assets = {}
+    eth_assets["ETH"] = (float(response_dict["result"]) * 10**-18) * latest_eth
+    print("Done")
+    return eth_assets
+    
 ########################################################## Solana ###############################################################
 @cache.memoize(86400)
 def get_sol_assets(date):

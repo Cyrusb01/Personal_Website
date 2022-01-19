@@ -48,7 +48,7 @@ def portfolio():
     for i in range(len(all_allocs)):
         pie_dict = {}
         try:
-            print(all_allocs[i])
+            # print(all_allocs[i])
             float(all_allocs[i])
             pie_dict["name"] = all_tickers[i]
             pie_dict["y"] = (float(all_allocs[i])/sum)*100
