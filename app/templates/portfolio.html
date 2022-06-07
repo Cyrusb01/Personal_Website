@@ -57,7 +57,7 @@
 					View My Crypto Holdings
 				</p>
                 <p>
-                    Courtesy of solscan, etherscan, and roninchain explorer
+                    Courtesy of solscan, etherscan, and coinbase pro
                 </p>
 				<a>
 					-------------------------------------------------------------------------------------------------------------------
@@ -67,38 +67,41 @@
 						<h3 style="margin-bottom: 0px; padding: 0px;">
 							Etherscan	
 						</h3>
-						<p style="margin-top: 0px; padding: 0px;" >
+						<p style="margin: 0px; padding: 0px;" >
 							----------------
 						</p>
 						{% for i in range(eth_l) %}
-							<h5>
+							<p class = "tickers">
 								{{ eth_tickers[i] }}
-							</h5>
+							</p>
 						{% endfor %}
 						<h3 style="margin-bottom: 0px; padding: 0px; margin-top: 30px;">
 							Solscan	
 						</h3>
-						<p style="margin-top: 0px; padding: 0px;" >
+						<p style="margin:0px; padding: 0px;" >
 							-------------
 						</p>
 						{% for i in range(sol_l) %}
-							<h5>
+							<p class = "tickers">
 								{{ sol_tickers[i] }}
-							</h5>
+							</p>
 						{% endfor %}
 						<h3 style="margin-bottom: 0px; padding: 0px; margin-top: 30px;">
-							Ronin Explorer	
+							Coinbase Pro	
 						</h3>
-						<p style="margin-top: 0px; padding: 0px;" >
+						<p style="margin: 0px; padding: 0px;" >
 							--------------------
 						</p>
-						{% for i in range(ronin_l) %}
-							<h5>
-								{{ ronin_tickers[i] }}
-							</h5>
+						{% for i in range(cb_l) %}
+							<p class = "tickers">
+								{{ cb_tickers[i] }}
+							</p>
 						{% endfor %}
 					</div>
 					<div class = "col-8">
+						<h2 class = "text-center" style="margin-bottom: 0px; padding: 0px; margin-top: 30px; ">
+							Coinbase Portfolio	
+						</h2>
 						<div id="piechart" class="chart" style="height: 100%;"></div>
 						<script type = "text/javascript">
 							// var chart_id = {{ chartID|safe }}
@@ -114,9 +117,8 @@
 				</div>
 				<div class = "row mt-5">
 					<p> 
-						This page was built by webscraping (using selenium and beautiful soup) the three websites listed above. All the data shown here 
-						is public information displayed by the respective blockchains, however in order to access it the wallet public keys are needed. A portion 
-						of my crypto is also held in exchanges so this is not a full representation of my crypto portfolio, but rather something fun I wanted to build. 
+						This page was built by utilizing the APIs of solscan, etherscan, and coinbase pro. The pie chart only shows the breakdown 
+						and allocation of my coinbase holdings as the holdings in the wallets can be non fungible or liquidity tokens.  
 					</p>
 				<div>
 			</div>

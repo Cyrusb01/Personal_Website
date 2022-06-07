@@ -1,7 +1,12 @@
+.linked{
+    color: #282828 !important;
+    /* text-decoration: underline; */
+}
 
-
-.cyrus{
-    color: blueviolet;
+.tickers{
+    /* color:aqua; */
+    margin : 0 auto;
+    
 }
 .btn-custom-1 {
     color: #000000;
