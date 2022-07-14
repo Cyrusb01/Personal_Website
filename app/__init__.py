@@ -5,7 +5,7 @@ cache = Cache()
 app = Flask(__name__)
 
 
-app.config['CACHE_TYPE'] = 'simple'
+app.config["CACHE_TYPE"] = "simple"
 cache.init_app(app)
 
 
