@@ -3,7 +3,6 @@ import os
 import ccxt
 import requests
 import yfinance as yf
-
 from app import cache
 
 
@@ -13,22 +12,26 @@ def get_coinbase_assets(date):
     api_key = os.getenv("CB_KEY")
     api_secret = os.getenv("CB_SECRET")
     passphrase = os.getenv("CB_PASSPHRASE")
+    
     # client = Client(api_key, api_secret)
-    exchange_class = getattr(ccxt, "coinbasepro")
+    exchange_class = getattr(ccxt, "coinbase")
     ccxt_object = exchange_class(
         {"apiKey": api_key, "secret": api_secret, "password": passphrase}
     )
 
     raw_balances = ccxt_object.fetch_balance()
-
     # print(raw_balances)
+
+    for balance in raw_balances["free"]:
+        print(balance)
+
     positive_balances = [
-        {"asset": balance["currency"], "balance": float(balance["balance"]),}
-        for balance in raw_balances["info"]
-        if float(balance["balance"]) > 0
+        {"asset": asset, "balance": float(raw_balances["free"][asset]),}
+        for asset in raw_balances["free"]
+        if float(raw_balances["free"][asset]) > 0
     ]
 
-    # print(positive_balances)
+    print(positive_balances)
     total_value = 0
     for balance in positive_balances:
         ticker = balance["asset"]
@@ -83,6 +86,7 @@ def get_sol_assets(date):
     address = "9zQQvGgDNF57Givi2AVLpaydWNPYgmQhDkxZsxnc3hNj"
     ether_call = f"https://public-api.solscan.io/account/tokens?account={address}"
     response = requests.get(ether_call)
+    print(response)
     response_dict = response.json()
     tokens = []
     for response in response_dict:

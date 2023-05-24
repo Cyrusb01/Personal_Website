@@ -21,9 +21,19 @@ def portfolio():
 
     # Fetch data once a day from apis and cache it
     today = datetime.now().strftime("%Y/%m/%d")
-    sol_tokens = get_sol_assets(today)  # Returns list
-    eth_tokens = get_eth_assets(today)  # Returns dict
-    coinbase_tokens = get_coinbase_assets(today)  # Returns dict
+    try:
+        sol_tokens = get_sol_assets(today)  # Returns list
+    except:
+        sol_tokens = []
+    try:
+        eth_tokens = get_eth_assets(today)  # Returns dict
+    except:
+        eth_tokens = {}
+    try:
+
+        coinbase_tokens = get_coinbase_assets(today)  # Returns dict
+    except:
+        coinbase_tokens = {}
     # Sorts coinbase Tokens by value
 
     eth_tickers = list(eth_tokens.keys())
